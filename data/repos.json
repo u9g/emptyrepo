@@ -1,13 +1,300 @@
 {
-  "generatedAt": "2026-01-13T00:00:00.000Z",
-  "note": "Placeholder dataset. Run `python3 scripts/update_data.py` to compute approximate counts from GitHub code search.",
+  "generatedAt": "2026-01-13T16:16:48.117630+00:00",
+  "note": "Counts are approximate. For each target signature, we run GitHub code search for \"<signature>\" \"@Mixin\" path:mixin excluding the target repo itself, then dedupe repositories from the returned code results. GitHub code search is capped (1000 results/query) and this script may sample only the first N pages.",
   "items": [
+    {
+      "repo": "LlamaLad7/MixinExtras",
+      "signature": "com.llamalad7.mixinextras",
+      "description": "MixinExtras (popular Mixin extensions)",
+      "referencingRepoCount": 96,
+      "codeResultCount": 4168,
+      "debug": {
+        "query": "\"com.llamalad7.mixinextras\" \"@Mixin\" -repo:LlamaLad7/MixinExtras",
+        "fetchedItems": 100,
+        "totalCount": 4168,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "FabricMC/fabric-loader",
+      "signature": "net.fabricmc.loader.api",
+      "description": "Fabric Loader APIs",
+      "referencingRepoCount": 96,
+      "codeResultCount": 608,
+      "debug": {
+        "query": "\"net.fabricmc.loader.api\" \"@Mixin\" -repo:FabricMC/fabric-loader",
+        "fetchedItems": 100,
+        "totalCount": 608,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "MinecraftForge/MinecraftForge",
+      "signature": "net.minecraftforge",
+      "description": "MinecraftForge APIs",
+      "referencingRepoCount": 95,
+      "codeResultCount": 2144,
+      "debug": {
+        "query": "\"net.minecraftforge\" \"@Mixin\" -repo:MinecraftForge/MinecraftForge",
+        "fetchedItems": 100,
+        "totalCount": 2144,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "FabricMC/fabric",
+      "signature": "net.fabricmc.fabric.api",
+      "description": "Fabric API",
+      "referencingRepoCount": 94,
+      "codeResultCount": 1952,
+      "debug": {
+        "query": "\"net.fabricmc.fabric.api\" \"@Mixin\" -repo:FabricMC/fabric",
+        "fetchedItems": 100,
+        "totalCount": 1952,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "architectury/architectury-api",
+      "signature": "dev.architectury",
+      "description": "Architectury API",
+      "referencingRepoCount": 93,
+      "codeResultCount": 432,
+      "debug": {
+        "query": "\"dev.architectury\" \"@Mixin\" -repo:architectury/architectury-api",
+        "fetchedItems": 100,
+        "totalCount": 432,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "CaffeineMC/lithium-fabric",
+      "signature": "me.jellysquid.mods.lithium",
+      "description": "Lithium (performance mod)",
+      "referencingRepoCount": 93,
+      "codeResultCount": 574,
+      "debug": {
+        "query": "\"me.jellysquid.mods.lithium\" \"@Mixin\" -repo:CaffeineMC/lithium-fabric",
+        "fetchedItems": 100,
+        "totalCount": 574,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "NeoForged/NeoForge",
+      "signature": "net.neoforged",
+      "description": "NeoForge APIs",
+      "referencingRepoCount": 92,
+      "codeResultCount": 812,
+      "debug": {
+        "query": "\"net.neoforged\" \"@Mixin\" -repo:NeoForged/NeoForge",
+        "fetchedItems": 100,
+        "totalCount": 812,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "mezz/JustEnoughItems",
+      "signature": "mezz.jei",
+      "description": "JEI",
+      "referencingRepoCount": 83,
+      "codeResultCount": 648,
+      "debug": {
+        "query": "\"mezz.jei\" \"@Mixin\" -repo:mezz/JustEnoughItems",
+        "fetchedItems": 100,
+        "totalCount": 648,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
     {
       "repo": "SpongePowered/Mixin",
       "signature": "org.spongepowered.asm.mixin",
       "description": "SpongePowered Mixin core library",
-      "referencingRepoCount": 0
+      "referencingRepoCount": 80,
+      "codeResultCount": 9632,
+      "debug": {
+        "query": "\"org.spongepowered.asm.mixin\" \"@Mixin\" -repo:SpongePowered/Mixin",
+        "fetchedItems": 100,
+        "totalCount": 9632,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "CaffeineMC/starlight",
+      "signature": "ca.spottedleaf.starlight",
+      "description": "Starlight (lighting engine)",
+      "referencingRepoCount": 61,
+      "codeResultCount": 97,
+      "debug": {
+        "query": "\"ca.spottedleaf.starlight\" \"@Mixin\" -repo:CaffeineMC/starlight",
+        "fetchedItems": 97,
+        "totalCount": 97,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "TerraformersMC/ModMenu",
+      "signature": "com.terraformersmc.modmenu",
+      "description": "Mod Menu",
+      "referencingRepoCount": 61,
+      "codeResultCount": 202,
+      "debug": {
+        "query": "\"com.terraformersmc.modmenu\" \"@Mixin\" -repo:TerraformersMC/ModMenu",
+        "fetchedItems": 100,
+        "totalCount": 202,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "CaffeineMC/sodium-fabric",
+      "signature": "me.jellysquid.mods.sodium",
+      "description": "Sodium (performance mod)",
+      "referencingRepoCount": 59,
+      "codeResultCount": 1156,
+      "debug": {
+        "query": "\"me.jellysquid.mods.sodium\" \"@Mixin\" -repo:CaffeineMC/sodium-fabric",
+        "fetchedItems": 100,
+        "totalCount": 1156,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "MeteorDevelopment/meteor-client",
+      "signature": "meteordevelopment.meteorclient",
+      "description": "Meteor Client",
+      "referencingRepoCount": 53,
+      "codeResultCount": 1152,
+      "debug": {
+        "query": "\"meteordevelopment.meteorclient\" \"@Mixin\" -repo:MeteorDevelopment/meteor-client",
+        "fetchedItems": 100,
+        "totalCount": 1152,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "shedaniel/RoughlyEnoughItems",
+      "signature": "me.shedaniel.rei",
+      "description": "REI",
+      "referencingRepoCount": 50,
+      "codeResultCount": 167,
+      "debug": {
+        "query": "\"me.shedaniel.rei\" \"@Mixin\" -repo:shedaniel/RoughlyEnoughItems",
+        "fetchedItems": 100,
+        "totalCount": 167,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "CCBlueX/LiquidBounce",
+      "signature": "net.ccbluex.liquidbounce",
+      "description": "LiquidBounce (client)",
+      "referencingRepoCount": 48,
+      "codeResultCount": 1180,
+      "debug": {
+        "query": "\"net.ccbluex.liquidbounce\" \"@Mixin\" -repo:CCBlueX/LiquidBounce",
+        "fetchedItems": 100,
+        "totalCount": 1180,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "FabricMC/intermediary",
+      "signature": "net.minecraft.class_",
+      "description": "Intermediary-style mapped class names (heuristic)",
+      "referencingRepoCount": 42,
+      "codeResultCount": 860,
+      "debug": {
+        "query": "\"net.minecraft.class_\" \"@Mixin\" -repo:FabricMC/intermediary",
+        "fetchedItems": 100,
+        "totalCount": 860,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "QuiltMC/quilted-fabric-api",
+      "signature": "org.quiltmc.qsl",
+      "description": "Quilt Standard Libraries (QSL)",
+      "referencingRepoCount": 41,
+      "codeResultCount": 368,
+      "debug": {
+        "query": "\"org.quiltmc.qsl\" \"@Mixin\" -repo:QuiltMC/quilted-fabric-api",
+        "fetchedItems": 100,
+        "totalCount": 368,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "shedaniel/cloth-config",
+      "signature": "me.shedaniel.clothconfig2",
+      "description": "Cloth Config",
+      "referencingRepoCount": 37,
+      "codeResultCount": 67,
+      "debug": {
+        "query": "\"me.shedaniel.clothconfig2\" \"@Mixin\" -repo:shedaniel/cloth-config",
+        "fetchedItems": 67,
+        "totalCount": 67,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "QuiltMC/quilt-loader",
+      "signature": "org.quiltmc.loader.api",
+      "description": "Quilt Loader APIs",
+      "referencingRepoCount": 30,
+      "codeResultCount": 120,
+      "debug": {
+        "query": "\"org.quiltmc.loader.api\" \"@Mixin\" -repo:QuiltMC/quilt-loader",
+        "fetchedItems": 100,
+        "totalCount": 120,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "PaperMC/Paper",
+      "signature": "io.papermc.paper",
+      "description": "Paper (server fork APIs)",
+      "referencingRepoCount": 26,
+      "codeResultCount": 113,
+      "debug": {
+        "query": "\"io.papermc.paper\" \"@Mixin\" -repo:PaperMC/Paper",
+        "fetchedItems": 100,
+        "totalCount": 113,
+        "maxPages": 1,
+        "perPage": 100
+      }
+    },
+    {
+      "repo": "PaperMC/Velocity",
+      "signature": "com.velocitypowered",
+      "description": "Velocity proxy APIs",
+      "referencingRepoCount": 7,
+      "codeResultCount": 9,
+      "debug": {
+        "query": "\"com.velocitypowered\" \"@Mixin\" -repo:PaperMC/Velocity",
+        "fetchedItems": 9,
+        "totalCount": 9,
+        "maxPages": 1,
+        "perPage": 100
+      }
     }
   ]
 }
-
