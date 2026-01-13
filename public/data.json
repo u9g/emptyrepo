@@ -1,0 +1,72 @@
+[
+  {
+    "owner": "FabricMC",
+    "repo": "fabric",
+    "package": "net.fabricmc.fabric",
+    "count": 2344,
+    "url": "https://github.com/FabricMC/fabric"
+  },
+  {
+    "owner": "MinecraftForge",
+    "repo": "MinecraftForge",
+    "package": "net.minecraftforge",
+    "count": 2224,
+    "url": "https://github.com/MinecraftForge/MinecraftForge"
+  },
+  {
+    "owner": "SpongePowered",
+    "repo": "Sponge",
+    "package": "org.spongepowered.api",
+    "count": 1768,
+    "url": "https://github.com/SpongePowered/Sponge"
+  },
+  {
+    "owner": "AppliedEnergistics",
+    "repo": "Applied-Energistics-2",
+    "package": "appeng",
+    "count": 1200,
+    "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2"
+  },
+  {
+    "owner": "CaffeineMC",
+    "repo": "sodium-fabric",
+    "package": "me.jellysquid.mods.sodium",
+    "count": 1004,
+    "url": "https://github.com/CaffeineMC/sodium-fabric"
+  },
+  {
+    "owner": "VazkiiMods",
+    "repo": "Botania",
+    "package": "vazkii.botania",
+    "count": 752,
+    "url": "https://github.com/VazkiiMods/Botania"
+  },
+  {
+    "owner": "mekanism",
+    "repo": "Mekanism",
+    "package": "mekanism",
+    "count": 696,
+    "url": "https://github.com/mekanism/Mekanism"
+  },
+  {
+    "owner": "IrisShaders",
+    "repo": "Iris",
+    "package": "net.irisshaders.iris",
+    "count": 588,
+    "url": "https://github.com/IrisShaders/Iris"
+  },
+  {
+    "owner": "TerraformersMC",
+    "repo": "ModMenu",
+    "package": "com.terraformersmc.modmenu",
+    "count": 193,
+    "url": "https://github.com/TerraformersMC/ModMenu"
+  },
+  {
+    "owner": "shedaniel",
+    "repo": "RoughlyEnoughItems",
+    "package": "me.shedaniel.rei",
+    "count": 125,
+    "url": "https://github.com/shedaniel/RoughlyEnoughItems"
+  }
+]
