@@ -16,10 +16,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import subprocess
 import sys
 import time
+from urllib.parse import quote_plus
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -30,24 +30,43 @@ OUTPUT_PATH = ROOT / "data" / "repos.json"
 
 
 def run_gh_api_search_code(query: str, page: int, per_page: int) -> dict:
-    cmd = [
-        "gh",
-        "api",
-        "search/code",
-        "-f",
-        f"q={query}",
-        "-f",
-        f"page={page}",
-        "-f",
-        f"per_page={per_page}",
-    ]
-    try:
-        out = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True)
-    except subprocess.CalledProcessError as e:
-        raise RuntimeError(
-            f"GitHub API query failed (exit {e.returncode}). Output:\n{e.output}"
-        ) from e
+    # `gh api` switches to POST when using `-f` form fields; search endpoints are GET-only.
+    # Use a URL with query params and force GET.
+    q = quote_plus(query)
+    cmd = ["gh", "api", "-X", "GET", f"/search/code?q={q}&page={page}&per_page={per_page}"]
+    for attempt in range(1, 6):
+        try:
+            out = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True)
+            return json.loads(out)
+        except subprocess.CalledProcessError as e:
+            # GitHub returns 403 when the (very low) code search limit is exceeded.
+            if "rate limit exceeded" in (e.output or "").lower():
+                wait_for_code_search_reset()
+                continue
+            raise RuntimeError(
+                f"GitHub API query failed (exit {e.returncode}). Output:\n{e.output}"
+            ) from e
+    raise RuntimeError("GitHub API query failed after repeated rate-limit retries.")
+
+
+def get_rate_limit() -> dict:
+    out = subprocess.check_output(["gh", "api", "/rate_limit"], text=True)
     return json.loads(out)
+
+
+def wait_for_code_search_reset() -> None:
+    data = get_rate_limit()
+    code = ((data.get("resources") or {}).get("code_search")) or {}
+    remaining = int(code.get("remaining") or 0)
+    reset = int(code.get("reset") or 0)
+    now = int(time.time())
+
+    if remaining > 0:
+        return
+
+    sleep_for = max(0, reset - now) + 2
+    print(f"Code search rate limit reached; sleeping {sleep_for}s until reset...", file=sys.stderr)
+    time.sleep(sleep_for)
 
 
 def build_query(signature: str, target_repo: str) -> str:
