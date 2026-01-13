@@ -71,10 +71,12 @@ def wait_for_code_search_reset() -> None:
 
 def build_query(signature: str, target_repo: str) -> str:
     # Keep this conservative: avoid advanced operators that behave inconsistently in code search.
-    # - path:mixin narrows to typical mixin directories (common across modding repos).
     # - "@Mixin" ensures we’re actually in Mixin code, not random references.
     # - exclude the target repo itself to count only "other repos".
-    return f"\"{signature}\" \"@Mixin\" path:mixin -repo:{target_repo}"
+    #
+    # Note: we intentionally do NOT require path:mixin because many projects keep mixins in
+    # other directories (or the string "mixin" doesn't appear in the path).
+    return f"\"{signature}\" \"@Mixin\" -repo:{target_repo}"
 
 
 def estimate_unique_repos_for_signature(
@@ -84,13 +86,16 @@ def estimate_unique_repos_for_signature(
     max_pages: int,
     per_page: int,
     sleep_ms: int,
-) -> tuple[int, int]:
+) -> tuple[int, int, int]:
     seen_repos: set[str] = set()
     fetched_items = 0
+    total_count = 0
 
     query = build_query(signature, target_repo)
     for page in range(1, max_pages + 1):
         data = run_gh_api_search_code(query=query, page=page, per_page=per_page)
+        if page == 1:
+            total_count = int(data.get("total_count") or 0)
         items = data.get("items") or []
         if not items:
             break
@@ -112,7 +117,7 @@ def estimate_unique_repos_for_signature(
         if page * per_page >= 1000:
             break
 
-    return len(seen_repos), fetched_items
+    return len(seen_repos), fetched_items, total_count
 
 
 def main() -> int:
@@ -138,7 +143,7 @@ def main() -> int:
         if not repo or not signature:
             continue
 
-        count, fetched_items = estimate_unique_repos_for_signature(
+        count, fetched_items, total_count = estimate_unique_repos_for_signature(
             signature=signature,
             target_repo=repo,
             max_pages=args.max_pages,
@@ -152,16 +157,20 @@ def main() -> int:
                 "signature": signature,
                 "description": desc,
                 "referencingRepoCount": count,
+                "codeResultCount": total_count,
                 "debug": {
                     "query": build_query(signature, repo),
                     "fetchedItems": fetched_items,
+                    "totalCount": total_count,
                     "maxPages": args.max_pages,
                     "perPage": args.per_page,
                 },
             }
         )
 
-        print(f"{repo}: {count} unique repos (sampled from {fetched_items} code results)")
+        print(
+            f"{repo}: {count} unique repos (sampled from {fetched_items} code results; total hits: {total_count})"
+        )
 
     items_out.sort(key=lambda x: int(x.get("referencingRepoCount") or 0), reverse=True)
 

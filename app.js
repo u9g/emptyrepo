@@ -45,7 +45,10 @@ function renderRows(rowsEl, items, filterText) {
             <a href="${url}" target="_blank" rel="noreferrer">${escapeHtml(it.repo)}</a>
             ${desc}
           </td>
-          <td class="num-col">${formatNum(it.referencingRepoCount)}</td>
+          <td class="num-col">
+            ${formatNum(it.referencingRepoCount)}
+            <div class="muted" style="margin-top:4px;">code hits: ${formatNum(it.codeResultCount)}</div>
+          </td>
           <td><code>${escapeHtml(it.signature || "")}</code></td>
         </tr>
       `;
