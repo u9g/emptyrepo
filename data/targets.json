@@ -1,0 +1,111 @@
+{
+  "note": "Each target describes a Minecraft-related repo plus a signature string that commonly appears inside mixin source files that reference it (usually a Java/Kotlin package prefix).",
+  "targets": [
+    {
+      "repo": "SpongePowered/Mixin",
+      "signature": "org.spongepowered.asm.mixin",
+      "description": "SpongePowered Mixin core library"
+    },
+    {
+      "repo": "LlamaLad7/MixinExtras",
+      "signature": "com.llamalad7.mixinextras",
+      "description": "MixinExtras (popular Mixin extensions)"
+    },
+    {
+      "repo": "FabricMC/fabric",
+      "signature": "net.fabricmc.fabric.api",
+      "description": "Fabric API"
+    },
+    {
+      "repo": "FabricMC/fabric-loader",
+      "signature": "net.fabricmc.loader.api",
+      "description": "Fabric Loader APIs"
+    },
+    {
+      "repo": "FabricMC/intermediary",
+      "signature": "net.minecraft.class_",
+      "description": "Intermediary-style mapped class names (heuristic)"
+    },
+    {
+      "repo": "MinecraftForge/MinecraftForge",
+      "signature": "net.minecraftforge",
+      "description": "MinecraftForge APIs"
+    },
+    {
+      "repo": "NeoForged/NeoForge",
+      "signature": "net.neoforged",
+      "description": "NeoForge APIs"
+    },
+    {
+      "repo": "QuiltMC/quilt-loader",
+      "signature": "org.quiltmc.loader.api",
+      "description": "Quilt Loader APIs"
+    },
+    {
+      "repo": "QuiltMC/quilted-fabric-api",
+      "signature": "org.quiltmc.qsl",
+      "description": "Quilt Standard Libraries (QSL)"
+    },
+    {
+      "repo": "architectury/architectury-api",
+      "signature": "dev.architectury",
+      "description": "Architectury API"
+    },
+    {
+      "repo": "CaffeineMC/sodium-fabric",
+      "signature": "me.jellysquid.mods.sodium",
+      "description": "Sodium (performance mod)"
+    },
+    {
+      "repo": "CaffeineMC/lithium-fabric",
+      "signature": "me.jellysquid.mods.lithium",
+      "description": "Lithium (performance mod)"
+    },
+    {
+      "repo": "CaffeineMC/starlight",
+      "signature": "ca.spottedleaf.starlight",
+      "description": "Starlight (lighting engine)"
+    },
+    {
+      "repo": "PaperMC/Paper",
+      "signature": "io.papermc.paper",
+      "description": "Paper (server fork APIs)"
+    },
+    {
+      "repo": "PaperMC/Velocity",
+      "signature": "com.velocitypowered",
+      "description": "Velocity proxy APIs"
+    },
+    {
+      "repo": "TerraformersMC/ModMenu",
+      "signature": "com.terraformersmc.modmenu",
+      "description": "Mod Menu"
+    },
+    {
+      "repo": "shedaniel/cloth-config",
+      "signature": "me.shedaniel.clothconfig2",
+      "description": "Cloth Config"
+    },
+    {
+      "repo": "mezz/JustEnoughItems",
+      "signature": "mezz.jei",
+      "description": "JEI"
+    },
+    {
+      "repo": "shedaniel/RoughlyEnoughItems",
+      "signature": "me.shedaniel.rei",
+      "description": "REI"
+    },
+    {
+      "repo": "CCBlueX/LiquidBounce",
+      "signature": "net.ccbluex.liquidbounce",
+      "description": "LiquidBounce (client)"
+    },
+    {
+      "repo": "MeteorDevelopment/meteor-client",
+      "signature": "meteordevelopment.meteorclient",
+      "description": "Meteor Client"
+    }
+  ]
+}
+

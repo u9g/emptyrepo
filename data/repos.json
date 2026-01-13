@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-01-13T00:00:00.000Z",
+  "note": "Placeholder dataset. Run `python3 scripts/update_data.py` to compute approximate counts from GitHub code search.",
+  "items": [
+    {
+      "repo": "SpongePowered/Mixin",
+      "signature": "org.spongepowered.asm.mixin",
+      "description": "SpongePowered Mixin core library",
+      "referencingRepoCount": 0
+    }
+  ]
+}
+

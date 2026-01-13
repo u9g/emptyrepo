@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minecraft Mixin Reference Index</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Minecraft Mixin Reference Index</h1>
+      <p class="subtitle">
+        Ranks Minecraft-related GitHub repositories by how many <em>other</em> GitHub repos reference them inside mixin source files.
+        Counts are derived from GitHub code search and are approximate.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <label class="control">
+          <span class="label">Filter</span>
+          <input id="filter" type="search" placeholder="e.g. Fabric, Forge, MixinExtras…" autocomplete="off" />
+        </label>
+        <div class="meta">
+          <div id="last-updated" class="muted"></div>
+          <div id="data-note" class="muted"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table id="table">
+            <thead>
+              <tr>
+                <th class="rank-col">Rank</th>
+                <th>Repository</th>
+                <th class="num-col">Referencing repos (approx)</th>
+                <th>Signature</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="foot">
+        <p class="muted">
+          Update the dataset by running <code>python3 scripts/update_data.py</code>. The script uses the authenticated GitHub CLI (<code>gh</code>).
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
