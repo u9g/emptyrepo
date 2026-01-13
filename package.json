@@ -1,0 +1,22 @@
+{
+  "name": "minecraft-mixin-reference-website",
+  "version": "1.0.0",
+  "description": "A website listing Minecraft repositories by how many other repos reference them in mixins",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "minecraft",
+    "mixin",
+    "modding",
+    "fabric",
+    "forge"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
